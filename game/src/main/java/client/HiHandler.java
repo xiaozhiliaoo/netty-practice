@@ -8,7 +8,7 @@ import org.jboss.netty.channel.*;
 /**
  * Created by lili on 2017/4/23.
  */
-public class HiHandler  extends SimpleChannelHandler{
+public class HiHandler  extends SimpleChannelHandler {
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
         //业务层代码不该写在handler里面

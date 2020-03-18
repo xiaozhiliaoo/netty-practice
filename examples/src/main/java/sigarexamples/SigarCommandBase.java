@@ -29,9 +29,7 @@ import org.hyperic.sigar.util.PrintfFormat;
 import java.io.PrintStream;
 import java.util.*;
 
-public abstract class SigarCommandBase
-    extends ShellCommandBase
-    implements GetlineCompleter {
+public abstract class SigarCommandBase extends ShellCommandBase implements GetlineCompleter {
 
     protected org.hyperic.sigar.cmd.Shell shell;
     protected PrintStream out = System.out;
@@ -47,11 +45,11 @@ public abstract class SigarCommandBase
 
     public SigarCommandBase(org.hyperic.sigar.cmd.Shell shell) {
         this.shell = shell;
-        this.out   = shell.getOutStream();
-        this.err   = shell.getErrStream();
+        this.out = shell.getOutStream();
+        this.err = shell.getErrStream();
         this.sigar = shell.getSigar();
         this.proxy = shell.getSigarProxy();
-        
+
         //provide simple way for handlers to implement tab completion
         this.completer = new CollectionCompleter(shell);
         if (isPidCompleter()) {
@@ -85,21 +83,19 @@ public abstract class SigarCommandBase
         if (formatter == null) {
             //see flushPrintfItems
             this.printfItems.add(items);
-        }
-        else {
+        } else {
             println(formatter.sprintf(items));
         }
     }
 
     public void printf(List items) {
-        printf((Object[])items.toArray(new Object[0]));
+        printf((Object[]) items.toArray(new Object[0]));
     }
 
     public void println(String line) {
         if (this.shell.isInteractive()) {
             this.output.add(line);
-        }
-        else {
+        } else {
             this.out.println(line);
         }
     }
@@ -112,15 +108,14 @@ public abstract class SigarCommandBase
         //no format was specified, just line up the columns
         int[] max = null;
 
-        for (Iterator it=this.printfItems.iterator();
-             it.hasNext();)
-        {
-            Object[] items = (Object[])it.next();
+        for (Iterator it = this.printfItems.iterator();
+             it.hasNext(); ) {
+            Object[] items = (Object[]) it.next();
             if (max == null) {
                 max = new int[items.length];
                 Arrays.fill(max, 0);
             }
-            for (int i=0; i<items.length; i++) {
+            for (int i = 0; i < items.length; i++) {
                 int len = items[i].toString().length();
                 if (len > max[i]) {
                     max[i] = len;
@@ -129,17 +124,16 @@ public abstract class SigarCommandBase
         }
 
         StringBuffer format = new StringBuffer();
-        for (int i=0; i<max.length; i++) {
+        for (int i = 0; i < max.length; i++) {
             format.append("%-" + max[i] + "s");
-            if (i < max.length-1) {
+            if (i < max.length - 1) {
                 format.append("    ");
             }
         }
 
-        for (Iterator it=this.printfItems.iterator();
-             it.hasNext();)
-        {
-            printf(format.toString(), (Object[])it.next());
+        for (Iterator it = this.printfItems.iterator();
+             it.hasNext(); ) {
+            printf(format.toString(), (Object[]) it.next());
         }
         this.printfItems.clear();
     }
@@ -149,7 +143,7 @@ public abstract class SigarCommandBase
 
         try {
             this.shell.performPaging(new StaticPageFetcher(this.output));
-        } catch(PageFetchException e) {
+        } catch (PageFetchException e) {
             this.err.println("Error paging: " + e.getMessage());
         } finally {
             this.output.clear();
@@ -157,15 +151,14 @@ public abstract class SigarCommandBase
     }
 
     public abstract void output(String[] args)
-        throws SigarException;
+            throws SigarException;
 
     protected boolean validateArgs(String[] args) {
         return args.length == 0;
     }
 
-    public void processCommand(String[] args) 
-        throws ShellCommandUsageException, ShellCommandExecException
-    {
+    public void processCommand(String[] args)
+            throws ShellCommandUsageException, ShellCommandExecException {
         if (!validateArgs(args)) {
             throw new ShellCommandUsageException(getSyntax());
         }
@@ -191,8 +184,7 @@ public abstract class SigarCommandBase
 
     public String completePid(String line) {
         if ((line.length() >= 1) &&
-            Character.isDigit(line.charAt(0)))
-        {
+                Character.isDigit(line.charAt(0))) {
             return line;
         }
 
