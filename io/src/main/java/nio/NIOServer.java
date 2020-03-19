@@ -9,6 +9,9 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 
+/**
+ * NIO对网络抽象：ServerSocketChannel，Selector
+ */
 public class NIOServer {
 	// 通道管理器
 	private Selector selector;

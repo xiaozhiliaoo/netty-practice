@@ -16,6 +16,8 @@
         <module>helloworld</module>
         <module>examples</module>
         <module>nettydeploy</module>
+        <module>netty-in-action</module>
+        <module>nio-official</module>
     </modules>
 
 
