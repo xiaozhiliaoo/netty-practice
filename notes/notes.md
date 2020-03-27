@@ -9,4 +9,8 @@ https://github.com/jjenkov/java-nio-server
 
 https://jcp.org/en/jsr/detail?id=51
 
+http://www.javanio.info/ JAVANIO的书官网
+
+ByteArray，ByteBuffer，ByteArrayOutputStream，BitSet 区别。
+
 
