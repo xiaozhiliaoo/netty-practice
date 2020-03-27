@@ -18,6 +18,8 @@
         <module>nettydeploy</module>
         <module>netty-in-action</module>
         <module>nio-official</module>
+        <module>common-io</module>
+        <module>okio</module>
     </modules>
 
 
