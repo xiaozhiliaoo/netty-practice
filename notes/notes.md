@@ -8,9 +8,10 @@ https://github.com/jjenkov/java-nio-server
 文件传输：IO和NIO对比，https://blog.csdn.net/xinfeixiang201411/article/details/80105930
 
 https://jcp.org/en/jsr/detail?id=51
+https://jcp.org/en/jsr/detail?id=203
 
 http://www.javanio.info/ JAVANIO的书官网
 
-ByteArray，ByteBuffer，ByteArrayOutputStream，BitSet 区别。
+Byte, ByteArray(Byte[])，ByteBuffer，ByteArrayOutputStream，BitSet, Netty ByteBuf 区别。
 
 

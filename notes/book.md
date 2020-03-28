@@ -33,8 +33,10 @@ https://zhuanlan.zhihu.com/p/83398714
 
 https://www.0xffffff.org/2017/05/01/41-linux-io/
 
+https://en.wikipedia.org/wiki/Non-blocking_I/O_(Java)
 
+https://docs.oracle.com/javase/8/docs/technotes/guides/io/enhancements.html
 
-
+https://docs.oracle.com/javase/tutorial/essential/io/index.html
 
 
