@@ -21,6 +21,7 @@
         <module>common-io</module>
         <module>okio</module>
         <module>jnp4</module>
+        <module>io-v2</module>
     </modules>
 
 
