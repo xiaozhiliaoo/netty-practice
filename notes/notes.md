@@ -1,5 +1,6 @@
 domain object:
 
+epoll，select 必须到真实C代码
 
 https://github.com/jjenkov/java-nio-server
 
@@ -45,3 +46,16 @@ Pipe stream，Pipe channel，Exchanger，Disruptor
 理解核心抽象和隐喻以及他们的能力
 
 网络处理基本抽象：1 client 2 server(hander=read+decode+compute+encode+send)
+
+Norman Maurer：
+https://www.youtube.com/watch?v=DKJ0w30M0vg&t=55s
+
+netty in action 作者 http://normanmaurer.me/
+
+direct memory
+
+netty为什么高性能？其实已经给了答案，照着高性能说，netty的特点。
+
+https://en.wikipedia.org/wiki/Reactor_pattern
+
+C10K：http://www.kegel.com/c10k.html

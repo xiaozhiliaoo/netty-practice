@@ -8,7 +8,7 @@ import java.net.Socket;
  * @author lili
  * @date 2020/3/29 12:59
  * @description slide is:http://gee.cs.oswego.edu/dl/cpjslides/nio.pdf
- * @notes
+ * @notes Classic ServerSocket Loop
  */
 public class Server implements Runnable {
 
