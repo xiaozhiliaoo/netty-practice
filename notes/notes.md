@@ -39,7 +39,14 @@ Selector:provides a mechanism for waiting on channels and recognizing when one o
 channel.receive(buffer)
 channel.register(selector)
 
+Netty(新的抽象概念)：universal asynchronous I/O interface called a Channel
+Rich Buffer(ByteBuf)
+Event Model based on the Interceptor Chain Pattern（ChannelEvent，ChannelHandler，ChannelPipeline）
+Netty核心： buffer, channel, and event model
+
 Netty Channel VS NIO Channel?
+
+Go里面的Channel？抽象了什么
 
 Pipe stream，Pipe channel，Exchanger，Disruptor
 
@@ -61,3 +68,29 @@ https://en.wikipedia.org/wiki/Reactor_pattern
 C10K：http://www.kegel.com/c10k.html
 
 network_programming
+
+mmap,sendfile
+
+The transferTo method [25] in java.nio.channels.FileChannel is
+available for transferring data from a channel to a given writable
+byte channel through the sendfile system call. This would allow
+us to reduce the communication overhead between the Java
+Servlet Engine and the Web server with our proposed approach
+
+Zero-Copy in Linux with sendfile() and splice().
+
+zero-copy operations reduce the number of time-consuming mode switches between user space and kernel space
+
+sendfile - transfer data between file descriptors,sendfile() copies data between one file descriptor and another. 
+Because this copying is done within the kernel, sendfile() is more efficient than the 
+combination of read(2) and write(2), which would require transferring data to and from user space.
+
+mmap, munmap - map or unmap files or devices into memory
+
+web server read html and send to network, avoid user space and kernel space copy.
+
+transmit data from a "file" descriptor to a "socket"
+
+https://medium.com/@xunnan.xu/its-all-about-buffers-zero-copy-mmap-and-java-nio-50f2a1bfc05c
+
+NIO性能好，

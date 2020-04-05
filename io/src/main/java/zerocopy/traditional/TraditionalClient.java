@@ -8,6 +8,7 @@ import java.net.UnknownHostException;
 
 /**
  * Created by lili on 2017/6/24.
+ * https://developer.ibm.com/technologies/java/articles/j-zerocopy/
  */
 public class TraditionalClient {
     public static void main(String[] args) {

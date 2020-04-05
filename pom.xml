@@ -22,6 +22,7 @@
         <module>okio</module>
         <module>jnp4</module>
         <module>io-v2</module>
+        <module>netty-example</module>
     </modules>
 
 
