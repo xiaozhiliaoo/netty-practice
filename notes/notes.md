@@ -94,3 +94,5 @@ transmit data from a "file" descriptor to a "socket"
 https://medium.com/@xunnan.xu/its-all-about-buffers-zero-copy-mmap-and-java-nio-50f2a1bfc05c
 
 NIO性能好，
+
+https://www.researchgate.net/profile/Doug_Lea
