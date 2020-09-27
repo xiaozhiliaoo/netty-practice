@@ -21,7 +21,8 @@ public class Client {
 			socket = new Socket(ADDRESS, PORT);
 			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			out = new PrintWriter(socket.getOutputStream(), true);
-			
+
+
 			//向服务器端发送数据
 			out.println("接收到客户端的请求数据...");
 			String response = in.readLine();
